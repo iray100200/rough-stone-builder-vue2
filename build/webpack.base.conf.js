@@ -8,22 +8,10 @@ function resolve (dir) {
   return path.join(process.cwd(), dir)
 }
 
-const createLintingRule = () => ({
-  test: /\.(js|vue)$/,
-  loader: 'eslint-loader',
-  enforce: 'pre',
-  exclude: /node\_modules/,
-  include: [process.cwd()],
-  options: {
-    formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
-  }
-})
-
 module.exports = (entry, outputPath) => {
   if (!entry) throw 'no entry error'
   return {
-    context: path.resolve(__dirname, '..'),
+    context: process.cwd(),
     entry: {
       app: resolve(entry)
     },
@@ -39,7 +27,6 @@ module.exports = (entry, outputPath) => {
     },
     module: {
       rules: [
-        ...(config.dev.useEslint ? [createLintingRule()] : []),
         {
           test: /\.vue$/,
           loader: 'vue-loader',
