@@ -23,7 +23,7 @@ const createLintingRule = () => ({
 module.exports = (entry, outputPath) => {
   if (!entry) throw 'no entry error'
   return {
-    context: process.cwd(),
+    context: path.resolve(__dirname, '..'),
     entry: {
       app: resolve(entry)
     },
@@ -49,24 +49,7 @@ module.exports = (entry, outputPath) => {
           test: /\.jsx?$/,
           loader: 'babel-loader',
           exclude: /node\_modules/,
-          include: [process.cwd(), resolve('node_modules/webpack-dev-server/client')],
-          options: {
-            presets: [
-              [require('babel-preset-env'),
-                {
-                  "modules": false,
-                  "targets": {
-                    "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-                  }
-                }
-              ],
-              require('babel-preset-stage-2')
-            ],
-            plugins: [
-              require('babel-plugin-transform-vue-jsx'),
-              require('babel-plugin-transform-runtime')
-            ]
-          }
+          include: [process.cwd(), resolve('node_modules/webpack-dev-server/client')]
         },
         {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

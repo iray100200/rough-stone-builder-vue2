@@ -1,6 +1,6 @@
 {
   "name": "rough-stone-builder-vue2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A Vue2 Builder for Rough-Stone Prject",
   "author": "iray100200 <iray100200@hotmail.com>",
   "main": "build/build.js",
