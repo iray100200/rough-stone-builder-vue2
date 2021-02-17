@@ -1,0 +1,2 @@
+webpackJsonp([0],{aRsI:function(e,n){throw new Error("Module parse failed: Unexpected token (5:11)\nYou may need an appropriate loader to handle this file type.\n| new Vue({\r\n|   render () {\r\n|     return <div>Vue test</div>\r\n|   }\r\n| }).$mount('#app')\r")}},["aRsI"]);
+//# sourceMappingURL=app.314ebbe28d6f4b970e9e.js.map

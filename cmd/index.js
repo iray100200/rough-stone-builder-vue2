@@ -8,7 +8,6 @@ program
   .option('-e, --entry [value]', 'webpack entry path')
   .option('-o, --outputPath <value>', 'webpack output path')
   .action(function (options) {
-    console.log(options)
     build(options.entry, options.outputPath)
   })
 
