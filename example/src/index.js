@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 new Vue({
-  render (h) {
+  render () {
     return <div>example</div>
   }
 }).$mount('#app')

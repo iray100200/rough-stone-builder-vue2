@@ -16,6 +16,7 @@
     ]
   ],
   "plugins": [
+    "./plugins/babel-plugin-transform-vue-ignore-render-argument.js",
     "@vue/babel-plugin-transform-vue-jsx",
     "@babel/plugin-proposal-optional-chaining",
     "@babel/plugin-proposal-object-rest-spread",
