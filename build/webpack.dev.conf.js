@@ -25,7 +25,7 @@ function resolve (dir) {
 }
 
 Object.assign(devWebpackConfig, {
-  devtool: 'cheap-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
