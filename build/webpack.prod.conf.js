@@ -10,6 +10,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const env = require('../config/prod.env')
 
+function resolve (dir) {
+  return path.join(process.cwd(), process.env.BASE_DIR || '', dir)
+}
+
 const webpackConfig = {
   devtool: false,
   output: {
@@ -22,19 +26,18 @@ const webpackConfig = {
       'process.env': env
     }),
     new HtmlWebpackPlugin({
-      filename: config.build.index,
+      filename: 'index.html',
       template: path.resolve(__dirname, '..', 'index.html'),
       inject: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency'
+      }
     }),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(process.cwd(), 'public'),
+        from: resolve('public'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
