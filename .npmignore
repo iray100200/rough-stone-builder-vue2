@@ -2,3 +2,6 @@
 .eslintignore
 .editorconfig
 /node_modules
+/example
+*lock.json
+*.lock

@@ -21,3 +21,8 @@ build('./src/main.js')
 ```bash
 rs-build-vue2 --entry ./src/main.js
 ```
+
+## More info
+```bash
+rs-build-vue --help
+```
